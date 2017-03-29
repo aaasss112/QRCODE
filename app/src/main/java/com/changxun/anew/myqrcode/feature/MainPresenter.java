@@ -31,7 +31,7 @@ public class MainPresenter {
       }
 
       @Override public void onResponse(Call call, Response response) throws IOException {
-        mView.onSuccess(mContract);
+        //mView.onSuccess(mContract);
       }
     });
   }
