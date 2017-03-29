@@ -3,6 +3,7 @@ package com.changxun.anew.myqrcode;
 import android.app.Application;
 import android.content.Context;
 import com.changxun.anew.myqrcode.network.HttpUtil;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 
@@ -13,6 +14,7 @@ public class QRApplication extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
+    ZXingLibrary.initDisplayOpinion(this);
   }
 
   @Override public void onTerminate() {

@@ -18,13 +18,13 @@ public class MainPresenter {
   private Request mRequest;
 
   public MainPresenter(MainActivity view) {
-    Request.Builder builder = new Request.Builder();
-    builder.url(ContractService.daily_url);
-    mRequest = builder.build();
     mView = view;
   }
 
   public void request() {
+    Request.Builder builder = new Request.Builder();
+    builder.url(ContractService.daily_url);
+    mRequest = builder.build();
     HttpUtil.enqueue(mRequest, new Callback() {
       @Override public void onFailure(Call call, IOException e) {
         mView.onError(e);
