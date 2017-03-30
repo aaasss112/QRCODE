@@ -1,6 +1,8 @@
 package com.changxun.anew.myqrcode.feature;
 
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Message;
 import com.changxun.anew.myqrcode.model.Contract;
 import com.changxun.anew.myqrcode.network.HttpUtil;
 import com.changxun.anew.myqrcode.network.service.ContractService;
@@ -19,6 +21,8 @@ public class MainPresenter {
   private Request mRequest;
   private ScanAsyncTask mScanAsyncTask;
   private LoadingDialog mLoadingDialog;
+  private static final int REQUEST_FAIELD = 0;
+  private static final int REQUEST_SUCCESS = 1;
 
   public MainPresenter(MainActivity view) {
     mView = view;
@@ -35,16 +39,16 @@ public class MainPresenter {
     HttpUtil.newInstance();
     HttpUtil.enqueue(mRequest, new Callback() {
       @Override public void onFailure(Call call, IOException e) {
-        mView.onError(e);
-        mLoadingDialog.dismiss();
+        mThrowable = e;
+        mHandler.sendEmptyMessage(REQUEST_FAIELD);
       }
 
       @Override public void onResponse(Call call, Response response) throws IOException {
-        mView.onSuccess(mContract);
-        mLoadingDialog.dismiss();
+
+        mHandler.sendEmptyMessage(REQUEST_SUCCESS);
       }
     });
-    //mScanAsyncTask.execute(ContractService.daily_url);
+
   }
 
   public void onDestroy() {
@@ -77,4 +81,20 @@ public class MainPresenter {
       mLoadingDialog.dismiss();
     }
   }
+
+  public Handler mHandler = new Handler(new Handler.Callback() {
+    @Override public boolean handleMessage(Message msg) {
+      switch (msg.what) {
+        case REQUEST_FAIELD:
+          mView.onError(mThrowable);
+          mLoadingDialog.dismiss();
+          break;
+        case REQUEST_SUCCESS:
+          mView.onSuccess(mContract);
+          mLoadingDialog.dismiss();
+          break;
+      }
+      return true;
+    }
+  });
 }

@@ -67,6 +67,8 @@ public class MainActivity extends BaseActivity {
   @OnClick({ R.id.img_qr }) public void onImgClick() {
     Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
     startActivityForResult(intent, REQUEST_CODE);
+    ////测试网络请求
+    //mPresenter.request();
   }
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
