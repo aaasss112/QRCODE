@@ -1,3 +1,17 @@
 <resources>
   <string name="app_name">MyQRCode</string>
+
+  <string name="contract_info">%1$s%2$s</string>
+  <string name="contract_cotname">cotname:</string>
+  <string name="contract_pm_id">分包合同PM编号:</string>
+  <string name="contract_amount">分包合同签订金额:</string>
+  <string name="contract_amount_total">分包合同总金额:</string>
+  <string name="contract_prj_name">子项目编号:</string>
+  <string name="contract_progress">子项目累计进度:</string>
+  <string name="contract_budget_income">子项目预算收入:</string>
+  <string name="contract_gathering">累计收款:</string>
+  <string name="contract_budget">分包费预算:</string>
+  <string name="contract_expenses">分包费已报账金额:</string>
+  <string name="contract_nature">项目性质:</string>
+
 </resources>

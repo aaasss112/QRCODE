@@ -3,30 +3,99 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    tools:context="com.changxun.anew.myqrcode.feature.MainActivity" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="@color/xLightGrey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/xLightGrey"
     android:orientation="vertical"
-    >
+    tools:context="com.changxun.anew.myqrcode.feature.MainActivity">
 
   <LinearLayout
-      android:layout_width="match_parent" android:layout_height="@dimen/length_120"
-      android:background="@android:color/white" android:orientation="vertical">
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/length_120"
+      android:background="@android:color/white"
+      android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/img_qr" android:layout_width="@dimen/length_48"
-        android:layout_height="@dimen/length_48" android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/margin_36" android:src="@drawable/ic_barcode_scan"
-        android:contentDescription="@string/app_name" android:clickable="true"/>
+        android:id="@+id/img_qr"
+        android:layout_width="@dimen/length_48"
+        android:layout_height="@dimen/length_48"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_36"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_barcode_scan"/>
 
   </LinearLayout>
 
-  <LinearLayout
-      android:layout_width="match_parent" android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/margin_divider" android:orientation="vertical">
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_divider"
+      android:scrollbars="none">
 
-    <TextView
-        style="@style/TextViewStyle.Center.Gray" tools:text="文件名："/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-  </LinearLayout>
+      <TextView
+          android:id="@+id/txt_cotname"
+          android:text="@string/contract_cotname"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_pm_id"
+          android:text="@string/contract_pm_id"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_amount"
+          android:text="@string/contract_amount"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_amount_total"
+          android:text="@string/contract_amount_total"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_prj_name"
+          android:text="@string/contract_prj_name"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_progress"
+          android:text="@string/contract_progress"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_budget_income"
+          android:text="@string/contract_budget_income"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_gathering"
+          android:text="@string/contract_gathering"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_budget"
+          android:text="@string/contract_budget"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_expense"
+          android:text="@string/contract_expenses"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+      <TextView
+          android:id="@+id/txt_nature"
+          android:text="@string/contract_nature"
+          style="@style/TextViewStyle.Center.Gray"/>
+
+    </LinearLayout>
+
+  </ScrollView>
+
 
 </LinearLayout>

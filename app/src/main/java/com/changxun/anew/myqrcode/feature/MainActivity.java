@@ -3,12 +3,14 @@ package com.changxun.anew.myqrcode.feature;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.OnClick;
 import com.changxun.anew.myqrcode.R;
 import com.changxun.anew.myqrcode.feature.base.BaseActivity;
 import com.changxun.anew.myqrcode.model.Contract;
+import com.changxun.anew.myqrcode.widget.LoadingDialog;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
@@ -17,6 +19,17 @@ public class MainActivity extends BaseActivity {
   public static final int REQUEST_CODE = 0;
   private MainPresenter mPresenter;
   @BindView(R.id.img_qr) ImageView mQRImg;
+  @BindView(R.id.txt_amount) TextView txtAmount;
+  @BindView(R.id.txt_amount_total) TextView txtAmountTotal;
+  @BindView(R.id.txt_budget) TextView txtBudget;
+  @BindView(R.id.txt_budget_income) TextView txtBudgetIncome;
+  @BindView(R.id.txt_cotname) TextView txtCotName;
+  @BindView(R.id.txt_expense) TextView txtExpense;
+  @BindView(R.id.txt_gathering) TextView txtGathering;
+  @BindView(R.id.txt_nature) TextView txtNature;
+  @BindView(R.id.txt_pm_id) TextView txtPMId;
+  @BindView(R.id.txt_prj_name) TextView txtPrjName;
+  @BindView(R.id.txt_progress) TextView txtProgress;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_main);
@@ -32,6 +45,18 @@ public class MainActivity extends BaseActivity {
   }
 
   public void onSuccess(Contract contract) {
+
+    txtCotName.setText(getString(R.string.contract_info, getString(R.string.contract_cotname), ""));
+    txtAmount.setText(getString(R.string.contract_info, getString(R.string.contract_amount), ""));
+    txtAmountTotal.setText(getString(R.string.contract_info, getString(R.string.contract_amount_total), ""));
+    txtBudget.setText(getString(R.string.contract_info, getString(R.string.contract_budget), ""));
+    txtBudgetIncome.setText(getString(R.string.contract_info, getString(R.string.contract_budget_income), ""));
+    txtExpense.setText(getString(R.string.contract_info, getString(R.string.contract_expenses), ""));
+    txtGathering.setText(getString(R.string.contract_info, getString(R.string.contract_gathering), ""));
+    txtNature.setText(getString(R.string.contract_info, getString(R.string.contract_nature), ""));
+    txtPMId.setText(getString(R.string.contract_info, getString(R.string.contract_pm_id), ""));
+    txtPrjName.setText(getString(R.string.contract_info, getString(R.string.contract_prj_name), ""));
+    txtProgress.setText(getString(R.string.contract_info, getString(R.string.contract_progress), ""));
 
   }
 
