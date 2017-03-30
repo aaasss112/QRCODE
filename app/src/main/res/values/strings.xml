@@ -2,7 +2,7 @@
   <string name="app_name">MyQRCode</string>
 
   <string name="contract_info">%1$s%2$s</string>
-  <string name="contract_cotname">cotname:</string>
+  <string name="contract_cotname">分包合同名:</string>
   <string name="contract_pm_id">分包合同PM编号:</string>
   <string name="contract_amount">分包合同签订金额:</string>
   <string name="contract_amount_total">分包合同总金额:</string>
