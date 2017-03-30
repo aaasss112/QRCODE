@@ -32,8 +32,8 @@ public class MainActivity extends BaseActivity {
   @BindView(R.id.txt_progress) TextView txtProgress;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
-    setContentView(R.layout.activity_main);
     super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
     if (mPresenter == null) {
       mPresenter = new MainPresenter(this);
     }
